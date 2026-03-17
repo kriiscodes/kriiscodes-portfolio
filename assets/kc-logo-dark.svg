@@ -1,0 +1,17 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <rect width="64" height="64" fill="transparent"/>
+
+  <!-- Frame -->
+  <path d="M14 18L20 12H36L33 15H21L16 20V32L14 34V18Z" fill="#0dc3fe"/>
+  <path d="M38 12H54V15H35L38 12Z" fill="#0dc3fe"/>
+  <path d="M52 36L54 34V50L48 56H32L35 53H47L52 48V36Z" fill="#0dc3fe"/>
+  <path d="M15 53H30L27 56H15V53Z" fill="#0dc3fe"/>
+
+  <!-- K -->
+  <path d="M20 20H27V34L34 20H41L31 33L41 49H34L27 39V49H20V20Z" fill="#0dc3fe"/>
+
+  <!-- C -->
+  <path d="M54 24H46L42 28V40L46 44H54L51 47H44L38 41V27L44 21H51L54 24Z" fill="#ffffff"/>
+
+</svg>
