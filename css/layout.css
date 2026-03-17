@@ -15,7 +15,27 @@
 ========================= */
 
 .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1100;
   padding: 1.5rem 0;
+  background-color: var(--bg-color);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease,
+    padding 0.3s ease;
+}
+
+.site-header.is-hidden {
+  transform: translateY(-100%);
+}
+
+.site-header.is-scrolled {
+  padding: 1rem 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
 .navbar {
@@ -25,10 +45,18 @@
   gap: 24px;
 }
 
-.nav-menu {
+.mobile-panel {
   flex: 1;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.nav-menu {
+  display: flex;
   justify-content: center;
+  flex: 1;
 }
 
 .nav-links {
@@ -188,27 +216,6 @@
 
 }
 
-@media (max-width: 700px) {
-  .navbar {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .nav-menu {
-    order: 3;
-    flex-basis: 100%;
-    justify-content: center;
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .nav-actions {
-    justify-content: center;
-  }
-}
 
 @media (max-width: 768px) {
   .about-body {
@@ -228,6 +235,7 @@
     flex-direction: column;
     align-items: flex-start;
   }
+  
 }
 
 @media (max-width: 640px) {

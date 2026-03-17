@@ -47,11 +47,11 @@ textarea {
 ========================= */
 
 :root {
-  --accent:#0dc3fe;
+  --accent: #0dc3fe;
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 18px;
---container-width: 1440px;
+  --container-width: 1440px;
 }
 
 body {
@@ -63,7 +63,7 @@ body {
   --input-border: #24304a;
   --btn-text-dark: #04111f;
   --surface-muted: #11182b;
-  
+
   font-family: Arial, Helvetica, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -71,13 +71,13 @@ body {
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
+  padding-top: 96px;
 
   -webkit-font-smoothing: antialiased;
-
 }
 
 body.light {
-  --accent:#0864bb;
+  --accent: #0864bb;
   --bg-color: #f6f7fb;
   --text-color: #111827;
   --text-muted: #667085;
@@ -86,6 +86,10 @@ body.light {
   --input-border: #d0d5dd;
   --btn-text-dark: #ffffff;
   --surface-muted: #f2f4f7;
+}
+
+body.menu-open {
+  overflow: hidden;
 }
 
 /* =========================
@@ -113,7 +117,6 @@ body.light {
   margin: 0 auto 3rem;
   text-align: center;
 }
-
 
 .section-text {
   color: var(--text-muted);

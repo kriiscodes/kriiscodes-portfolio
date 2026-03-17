@@ -94,20 +94,16 @@ body.light .logo-image .logo-light {
   line-height: 1;
 }
 
-.logo-text{
+.logo-text {
   font-size: 1rem;
   font-weight: 700;
   color: var(--text-color);
 }
 
-.logo-role{
+.logo-role {
   font-size: 0.7rem;
   color: var(--text-muted);
 }
-
-
-
-
 
 .nav-links a {
   font-size: 0.95rem;
@@ -261,7 +257,7 @@ body.light .theme-toggle {
 .project-image {
   height: 220px;
   overflow: hidden;
- background: linear-gradient(135deg, #0f1320, #1a2035);
+  background: linear-gradient(135deg, #0f1320, #1a2035);
 }
 
 .project-image img {
@@ -270,7 +266,6 @@ body.light .theme-toggle {
   object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
-  
 }
 
 .project-card:hover .project-image img {
@@ -324,8 +319,6 @@ body.light .theme-toggle {
   align-items: flex-start;
   gap: 1rem;
 }
-
-
 
 .about-item-text {
   color: var(--text-muted);
@@ -504,6 +497,46 @@ body.light .theme-toggle {
   outline-offset: 3px;
 }
 
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+}
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: currentColor;
+  border-radius: 999px;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.navbar.menu-open .menu-toggle span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar.menu-open .menu-toggle span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.navbar.menu-open .menu-toggle span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.menu-backdrop {
+  display: none;
+}
+
 @media (max-width: 992px) {
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -517,13 +550,79 @@ body.light .theme-toggle {
 }
 
 @media (max-width: 768px) {
-  .about-item {
-    gap: 0.75rem;
+  .navbar {
+    justify-content: space-between;
+    align-items: center;
   }
-  .hero-images img {
-    max-height: 130px;
+
+  .menu-toggle {
+    display: flex;
+    margin-left: auto;
+    z-index: 1001;
   }
-  .about-image {
-    max-width: 16rem;
+
+  .mobile-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(320px, 85vw);
+    height: 100vh;
+    background-color: var(--card-bg);
+    border-left: 1px solid var(--card-border);
+    box-shadow: -18px 0 40px rgba(0, 0, 0, 0.22);
+    padding: 6.5rem 1.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 2.5rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .navbar.menu-open .mobile-panel {
+    transform: translateX(0);
+  }
+
+  .nav-menu {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 0;
+    font-size: 1.05rem;
+  }
+
+  .nav-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--card-border);
+  }
+
+  .nav-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-actions .theme-toggle {
+    margin-top: 0.25rem;
   }
 }
